@@ -1,0 +1,119 @@
+body {
+  background-color:#283149;
+  margin: 0;
+}
+h1 {
+  text-align: center;
+  font-size: 70px;
+  font-style: italic;
+  color: #f8f1f1;
+}
+h4{
+  text-align: center;
+  color: #f8f1f1;
+}
+p{
+  text-align: center;
+  padding-top: 20px;
+  color: #f8f1f1;
+  font-size: 20px;
+  line-height: 25px;
+}
+button{
+  font-size: 50px;
+  outline: none;
+}
+.icon{
+  outline: none;
+  padding: 0;
+}
+
+.track{
+  display: inline-block;
+  width: 50%;
+  padding : 20px 400px 0;
+}
+.t2{
+  margin: 10px;
+}
+.paragraph{
+  height: auto;
+  width: 60%;
+  margin: auto;
+}
+.hidden{
+  display: none;
+}
+.btn{
+  display: inline-block;
+  padding: 110px 70px 0;
+  height: 300px;
+  width: auto;
+  border-radius: 8px;
+}
+.pressed{
+  box-shadow: 0 3px 4px 0 #DBEDF3;
+  opacity: 0.5;
+}
+
+
+
+.active{
+  background-color: red;
+}
+.topnav {
+  overflow:hidden;
+  background-color:white ;
+  opacity: 40%;
+}
+
+.topnav button{
+  
+  border: none;
+  color: black;
+  background-color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 17px;
+
+}
+
+.topnav button:hover {
+  background-color: black;
+  color: #F9F9F9;
+  border-radius: 8px;
+}
+
+
+
+
+.drum{
+  border-radius: 25px;
+  border: 10px solid #6155a6;
+  width: 150px;
+  height: 150px;
+  margin: 20px;
+}
+.w{
+  background-image: url("images/tom1.png");
+}
+.a{
+    background-image: url("images/tom2.png");
+}
+.s{
+    background-image: url("images/tom3.png");
+}
+.d{
+    background-image: url("images/tom4.png");
+}
+.j{
+    background-image: url("images/crash.png");
+}
+.k{
+    background-image: url("images/kick.png");
+  }
+.l{
+    background-image: url("images/snare.png");
+}
