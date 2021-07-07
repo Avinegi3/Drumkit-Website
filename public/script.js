@@ -4,10 +4,12 @@ const drum=document.querySelectorAll(".drum");
 const challengep=document.querySelector(".challengep");
 const recordp =document.querySelector(".recordp");
 const savep = document.querySelector(".savep");
+const tips = document.querySelector(".tip");
 const track = document.querySelectorAll(".t1").length;
 const recordButton = document.querySelector(".record");
 const songlink = document.querySelector(".songlink");
 const play = document.querySelector(".play");
+
 const save = document.querySelector(".save");
 
 var userClicked=[];
@@ -16,20 +18,21 @@ var level=0;
 var started =false;
 
 let recordStartTime;
-let recording=[];
 let recordedItem;
-
+let recording=currentSong && currentSong.notes;
 
 
 
 recordButton.addEventListener("click", function(){
     recordp.style.display="block";
+    tips.classList.add("hidden");
      startRecording();
 
 });
 
 
 function startRecording(){
+  recording=[];
 recordStartTime=Date.now();
 for (var i=0;; i++) {
 document.querySelectorAll(".drum")[i].addEventListener("click", function() {
@@ -39,11 +42,10 @@ document.querySelectorAll(".drum")[i].addEventListener("click", function() {
        key: recordedItem,
        startTime: Date.now()-recordStartTime
      });
-
 });
 }
-
 }
+
 play.addEventListener("click", function (){
   if (recording.length === 0) return;
   recording.forEach(recordedItem => {
@@ -57,8 +59,8 @@ play.addEventListener("click", function (){
   save.addEventListener("click", function(){
       savep.style.display="block";
       axios.post("/songs",{recording: recording}).then(res =>{
-        songlink.href = `/songs/${res.data._id})`;
-
+        songlink.href = `/songs/${res.data._id}`;
+        recordp.style.display="none";
         });
   });
 
@@ -95,6 +97,7 @@ document.addEventListener("keypress", function(event){
 
 document.querySelector(".challenge").addEventListener("click" ,function(){
     challengep.style.display="block";
+    tips.classList.add("hidden");
    next();
     started=true;
  });
