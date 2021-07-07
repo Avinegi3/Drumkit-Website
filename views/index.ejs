@@ -5,9 +5,10 @@
     <meta charset="utf-8">
     <title>drum</title>
     <link rel="stylesheet" href="/style.css">
-    <!-- <script>
-      const currentSong = JSON.stringify(locals.song)>
-      </script> -->
+
+    <script defer>
+      const currentSong = <%- JSON.stringify(locals.song) || 'undefined'%>
+      </script>
     <script src="https://kit.fontawesome.com/a4ed3aa7ca.js" crossorigin="anonymous"></script>
 
     <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -23,26 +24,27 @@
       <button class="challenge t2"><i class="fas fa-gamepad"></i> Challenge</button>
 
       <button class="record t2"><i class="fas fa-record-vinyl"></i> Record</button>
-
-
-      <button class="play t2"><i class="fas fa-play"></i> Play</button>
-      <button  class="save t2"><i class="far fa-save"></i> Save</button>
-      <a href="#" class="songlink t2"> View song</a>
-      <a href="/"> record new song</a>
+        <button  class="save t2"><i class="far fa-save"></i> Save</button>
+        <button ><i class="far fa-eye"></i><a href="#" class="songlink t2"> View song</a></button>
+        <button class="play t2 "><i class="fas fa-play"></i> Play</button>
+    <button><i class="fas fa-plus-square"></i><a href="/"> Record New Song</a></button>
     </div>
 
      <h1 id="Title"> Drum 🥁 Kit</h1>
         <div class="paragraph">
-          <p class="tip">Tips : Play it by clicking or pressing the keys from your keyboard <p>
+          <p class="tip">Tips : Play it by clicking or pressing the keys from your keyboard </p>
+
         <p class="challengep hidden"> NOTE: It can be played By clicking the keys not by pressing <br> <br>
         Tips : By clicking on the challenge button a random sound is produced and you have to
         figure out which key was pressed if you pressed the right key then the Game Level increments and
         another random sound is produced, but this time you also have to click on the previous key which you
          clicked earlier to move to next Level and so on. You have to remember the keys which you clicked earlier </p>
-      <p class="savep hidden">"Sorry" Save feature and view song are in development</p>
+      <p class="savep hidden">Voila ! Your Song is Saved <br> <br>
+      Step 1:  Click View song Button and then <br> <br>Step 2:  Click on Play Button to Listen</p>
       <p class="recordp hidden"> Tips : By clicking Record button it will start recording and you can click the
         keys to record the tune, to listen that tune you just have to click Play button<br>
-         Time starts when Record button is clicked So Hurry Up"</p>
+         Time starts when Record button is clicked So Hurry Up" <br>
+        After Recording Click Save </p>
         </div>
 
 
@@ -60,3 +62,4 @@
 
   </body>
 </html>
+
